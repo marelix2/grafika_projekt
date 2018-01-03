@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="file chooser">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stamp/Service/AppCloseService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stamp/Service/FileChooserService.java" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/Controller.java" afterPath="$PROJECT_DIR$/src/stamp/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/GUI.fxml" afterPath="$PROJECT_DIR$/src/stamp/GUI.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/Main.java" afterPath="$PROJECT_DIR$/src/stamp/Main.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,8 +75,8 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stamp/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="51" column="61" lean-forward="false" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+            <state relative-caret-position="724">
+              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -449,12 +444,20 @@
       <workItem from="1514382390610" duration="825000" />
       <workItem from="1514550672518" duration="14577000" />
       <workItem from="1514646414109" duration="3744000" />
-      <workItem from="1514938213586" duration="377000" />
+      <workItem from="1514938213586" duration="439000" />
     </task>
+    <task id="LOCAL-00001" summary="AppCloseService">
+      <created>1514938622365</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1514938622365</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29126000" />
+    <option name="totallyTimeSpent" value="29188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
@@ -468,8 +471,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2555066" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2555066" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -541,7 +544,8 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="gui cleared" />
     <MESSAGE value="file chooser" />
-    <option name="LAST_COMMIT_MESSAGE" value="file chooser" />
+    <MESSAGE value="AppCloseService" />
+    <option name="LAST_COMMIT_MESSAGE" value="AppCloseService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -771,8 +775,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stamp/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="51" column="61" lean-forward="false" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+        <state relative-caret-position="724">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
