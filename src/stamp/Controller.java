@@ -45,7 +45,10 @@ public class Controller {
     public void initialize(){
         sizeSlider.setMin(1);
 
-        sizeSlider.valueProperty().addListener((observable,oldValue,newValue)-> sizeLabel.setText("Size:" + newValue));
+        sizeSlider.valueProperty().addListener((observable,oldValue,newValue)-> {
+            sizeSlider.setValue(newValue.intValue());
+            sizeLabel.setText("Size:" + newValue.intValue());
+        });
 
         fileOpen.setOnAction(e -> FileChooserService.selectFile());
 
