@@ -55,7 +55,7 @@ public class Controller {
 
     private ObservableValue<File> selectedImage = new SimpleObjectProperty<>();
 
-    private ObservableValue<ImageCursor> selectedCursor = new SimpleObjectProperty<>();
+    public ObservableValue<ImageCursor> selectedCursor = new SimpleObjectProperty<>();
 
 
 
@@ -84,37 +84,36 @@ public class Controller {
         circleButton.setOnAction( e -> {
             CircleCursor circleCursor = new CircleCursor();
             selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
-            System.out.print(selectedCursor.toString());
-            CursorControler cursorControler = new CursorControler(this.picView);
-            cursorControler.addEventListener(this.selectedCursor.getValue());
-
-
-
         });
 
         squareButton.setOnAction( e ->{
             SquareCursor squareCursor = new SquareCursor();
             selectedCursor = new SimpleObjectProperty<>(squareCursor.generateCursorShape(sizeSlider.getValue()));
-            CursorControler cursorControler = new CursorControler(this.picView);
-            cursorControler.addEventListener(this.selectedCursor.getValue());
-
         });
-
-
-
-
 
 
         fileClose.setOnAction(e -> AppCloseService.closeApp());
 
     }
 
-
-
-
     public Controller() {
 
     }
 
+    public void handleWindowShownEvent() {
+       this.setCursorManager();
+    }
 
+    public void setCursorManager() {
+
+        CursorControler cursorControler = new CursorControler(this.picView);
+        cursorControler.setImageCursor(selectedCursor.getValue());
+        cursorControler.addEventListener();
+
+    }
+
+   public ImageCursor getSelectedCursor(){
+
+        return selectedCursor.getValue();
+   }
 }

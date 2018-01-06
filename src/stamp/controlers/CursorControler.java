@@ -4,6 +4,7 @@ import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import stamp.Controller;
 import stamp.Listenrs.CircleCursor;
 
 
@@ -15,6 +16,7 @@ import stamp.Listenrs.CircleCursor;
 public class CursorControler {
 
     private ImageView  imageView;
+    private ImageCursor imageCursor;
 
 
 
@@ -23,7 +25,11 @@ public class CursorControler {
 
     }
 
-   public void addEventListener(ImageCursor imageCursor){
+    public void setImageCursor(ImageCursor imageCursor) {
+        this.imageCursor = imageCursor;
+    }
+
+    public void addEventListener(){
 
         this.imageView.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
 
@@ -46,11 +52,9 @@ public class CursorControler {
 
        this.imageView.addEventHandler(MouseEvent.MOUSE_EXITED, event -> {
 
-           if (event.isShiftDown()) {
                this.imageView.getScene().setCursor(Cursor.DEFAULT);
                System.out.println(imageCursor.toString());
 
-           }
 
        });
    }
