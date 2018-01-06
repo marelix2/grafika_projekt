@@ -10,12 +10,14 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import stamp.Listenrs.SavingImageListener;
 import stamp.Service.AppCloseService;
 import stamp.Service.FileChooserService;
 
 
 import java.beans.EventHandler;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.EventListener;
 
 
@@ -50,11 +52,22 @@ public class Controller {
             sizeLabel.setText("Size:" + newValue.intValue());
         });
 
-        fileOpen.setOnAction(e -> FileChooserService.selectFile());
+        fileOpen.setOnAction(e ->{
+              selectedImage = new SimpleObjectProperty<>(FileChooserService.selectFile().orElse(selectedImage.getValue()));
+             SavingImageListener savingImageListener = new SavingImageListener(this.picView);
+
+            try {
+                savingImageListener.addImageView(selectedImage.getValue());
+            } catch (FileNotFoundException e1) {
+                e1.printStackTrace();
+            }
+
+        });
 
         fileClose.setOnAction(e -> AppCloseService.closeApp());
 
     }
+
 
     public Controller() {
 
