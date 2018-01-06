@@ -85,6 +85,9 @@ public class Controller {
             CircleCursor circleCursor = new CircleCursor();
             selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
             System.out.print(selectedCursor.toString());
+            CursorControler cursorControler = new CursorControler(this.picView);
+            cursorControler.addEventListener(this.selectedCursor.getValue());
+
 
 
         });
@@ -92,9 +95,12 @@ public class Controller {
         squareButton.setOnAction( e ->{
             SquareCursor squareCursor = new SquareCursor();
             selectedCursor = new SimpleObjectProperty<>(squareCursor.generateCursorShape(sizeSlider.getValue()));
-            System.out.print("chuj");
+            CursorControler cursorControler = new CursorControler(this.picView);
+            cursorControler.addEventListener(this.selectedCursor.getValue());
 
         });
+
+
 
 
 
@@ -103,20 +109,7 @@ public class Controller {
 
     }
 
-    public void handleWindowShownEvent() {
-        this.CursorControlerManagment();
 
-    }
-
-    public void CursorControlerManagment(){
-
-        CursorControler cursorControler = new CursorControler(this.picView);
-        cursorControler.addEventListener(this.selectedCursor.getValue());
-        System.out.print(selectedCursor.toString());
-
-
-
-    }
 
 
     public Controller() {

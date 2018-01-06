@@ -1,5 +1,6 @@
 package stamp.controlers;
 
+import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -25,7 +26,7 @@ public class CursorControler {
    public void addEventListener(ImageCursor imageCursor){
 
         this.imageView.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
-            //
+
             if (event.isShiftDown()) {
                 this.imageView.getScene().setCursor(imageCursor);
 
@@ -37,6 +38,16 @@ public class CursorControler {
 
            if (event.isShiftDown()) {
                this.imageView.getScene().setCursor(imageCursor);
+               System.out.println(imageCursor.toString());
+
+           }
+
+       });
+
+       this.imageView.addEventHandler(MouseEvent.MOUSE_EXITED, event -> {
+
+           if (event.isShiftDown()) {
+               this.imageView.getScene().setCursor(Cursor.DEFAULT);
                System.out.println(imageCursor.toString());
 
            }
