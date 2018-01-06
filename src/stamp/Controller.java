@@ -55,18 +55,29 @@ public class Controller {
 
     private ObservableValue<File> selectedImage = new SimpleObjectProperty<>();
 
-    public ObservableValue<ImageCursor> selectedCursor = new SimpleObjectProperty<>();
+    private ObservableValue<ImageCursor> selectedCursor = new SimpleObjectProperty<>();
+    CircleCursor circleCursor = new CircleCursor();
+    SquareCursor squareCursor = new SquareCursor();
 
+
+
+
+    boolean isCircle = true;
 
 
 
     @FXML
     public void initialize(){
         sizeSlider.setMin(1);
+        CursorControler cursorControler = new CursorControler(this.picView);
+
+
 
         sizeSlider.valueProperty().addListener((observable,oldValue,newValue)-> {
             sizeSlider.setValue(newValue.intValue());
             sizeLabel.setText("Size:" + newValue.intValue());
+            CursorSizeUpdate(cursorControler);
+
         });
 
         fileOpen.setOnAction(e ->{
@@ -81,17 +92,17 @@ public class Controller {
 
         });
 
+
+
         circleButton.setOnAction( e -> {
-            CircleCursor circleCursor = new CircleCursor();
+            isCircle = true;
             selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
-            CursorControler cursorControler = new CursorControler(this.picView);
             cursorControler.addEventListener(selectedCursor.getValue());
         });
 
         squareButton.setOnAction( e ->{
-            SquareCursor squareCursor = new SquareCursor();
+            isCircle = false;
             selectedCursor = new SimpleObjectProperty<>(squareCursor.generateCursorShape(sizeSlider.getValue()));
-            CursorControler cursorControler = new CursorControler(this.picView);
             cursorControler.addEventListener(selectedCursor.getValue());
         });
 
@@ -104,14 +115,20 @@ public class Controller {
 
     }
 
-    public void handleWindowShownEvent() {
 
+    public void CursorSizeUpdate(CursorControler cursorControler){
+        if( isCircle){
+
+            selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
+            System.out.println(sizeSlider.getValue());
+            cursorControler.addEventListener(selectedCursor.getValue());
+        }else {
+            selectedCursor = new SimpleObjectProperty<>(squareCursor.generateCursorShape(sizeSlider.getValue()));
+            System.out.println(sizeSlider.getValue());
+            cursorControler.addEventListener(selectedCursor.getValue());
+        }
     }
 
-    public void setCursorManager() {
 
-
-
-    }
 
 }

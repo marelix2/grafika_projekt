@@ -41,7 +41,7 @@ public class CursorControler {
 
            if (event.isShiftDown()) {
                this.imageView.getScene().setCursor(imageCursor);
-               System.out.println(imageCursor.toString());
+               //System.out.println(imageCursor.toString());
 
            }
 
@@ -50,7 +50,7 @@ public class CursorControler {
        this.imageView.addEventHandler(MouseEvent.MOUSE_EXITED, event -> {
 
                this.imageView.getScene().setCursor(Cursor.DEFAULT);
-               System.out.println(imageCursor.toString());
+              // System.out.println(imageCursor.toString());
 
        });
 
