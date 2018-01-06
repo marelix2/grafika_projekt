@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/Controller.java" afterPath="$PROJECT_DIR$/src/stamp/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/Main.java" afterPath="$PROJECT_DIR$/src/stamp/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/controlers/CursorControler.java" afterPath="$PROJECT_DIR$/src/stamp/controlers/CursorControler.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,9 +88,8 @@
       <file leaf-file-name="CursorControler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stamp/controlers/CursorControler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="33" column="75" lean-forward="true" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#527#528#0" expanded="true" />
@@ -864,7 +860,7 @@
       <workItem from="1512596931562" duration="87000" />
       <workItem from="1515119532636" duration="12993000" />
       <workItem from="1515259795451" duration="3145000" />
-      <workItem from="1515263112436" duration="2551000" />
+      <workItem from="1515263112436" duration="2561000" />
     </task>
     <task id="LOCAL-00001" summary="displaying image on window">
       <created>1515251789083</created>
@@ -887,11 +883,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515263149153</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="sth changed">
+      <created>1515265724524</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1515265724524</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26405000" />
+    <option name="totallyTimeSpent" value="26415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1218,9 +1221,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stamp/controlers/CursorControler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="75" lean-forward="true" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#527#528#0" expanded="true" />
