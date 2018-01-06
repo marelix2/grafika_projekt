@@ -1,11 +1,13 @@
 package stamp;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 
 public class Main extends Application {
 
@@ -22,6 +24,7 @@ public class Main extends Application {
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root, 800,600));
         primaryStage.setResizable(false); //blokowanie zmiany rozmiaru
+            primaryStage.addEventHandler(WindowEvent.WINDOW_SHOWN, (e) -> Platform.runLater(controller::handleWindowShownEvent));
         primaryStage.show();
         
         }catch (Exception e){
