@@ -93,7 +93,6 @@ public class Controller {
         });
 
 
-
         circleButton.setOnAction( e -> {
             isCircle = true;
             selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
@@ -120,11 +119,9 @@ public class Controller {
         if( isCircle){
 
             selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
-            System.out.println(sizeSlider.getValue());
             cursorControler.addEventListener(selectedCursor.getValue());
         }else {
             selectedCursor = new SimpleObjectProperty<>(squareCursor.generateCursorShape(sizeSlider.getValue()));
-            System.out.println(sizeSlider.getValue());
             cursorControler.addEventListener(selectedCursor.getValue());
         }
     }

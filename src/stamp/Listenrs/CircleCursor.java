@@ -12,10 +12,12 @@ import javafx.scene.shape.Circle;
 public class CircleCursor implements CursorStategy {
     @Override
     public ImageCursor generateCursorShape(double radius) {
-        Circle circle = new Circle(radius,Color.BLACK);
+        Circle circle = new Circle(radius);
+        circle.setStroke(Color.BLACK);
+        circle.setFill(Color.rgb(0 ,0 ,0, 0.0 ));
 
         SnapshotParameters sp = new SnapshotParameters();
-        sp.setFill(Color.TRANSPARENT);
+        sp.setFill(Color.rgb(0 ,0 ,0, 0.0 ));
 
         Image image = circle.snapshot(sp, null);
 

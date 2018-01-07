@@ -17,9 +17,11 @@ public class SquareCursor implements CursorStategy {
        rec.setWidth(radius*2);
        rec.setHeight(radius*2);
        rec.setStroke(Color.BLACK);
+       rec.setFill(Color.rgb(0 ,0 ,0, 0.0 ));
 
         SnapshotParameters sp = new SnapshotParameters();
-        sp.setFill(Color.TRANSPARENT);
+        sp.setFill(Color.rgb(0 ,0 ,0, 0.0 ));
+
 
         Image image = rec.snapshot(sp, null);
 
