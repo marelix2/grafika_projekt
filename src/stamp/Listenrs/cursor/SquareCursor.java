@@ -1,4 +1,4 @@
-package stamp.Listenrs;
+package stamp.Listenrs.cursor;
 
 import javafx.scene.ImageCursor;
 import javafx.scene.SnapshotParameters;
@@ -6,6 +6,7 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import stamp.Listenrs.cursor.CursorStategy;
 
 /**
  * Created by Michał on 06.01.2018.

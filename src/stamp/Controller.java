@@ -1,9 +1,7 @@
 package stamp;
 
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.ImageCursor;
 import javafx.scene.control.Button;
@@ -11,20 +9,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
-import javafx.stage.FileChooser;
-import stamp.Listenrs.CircleCursor;
+import stamp.Listenrs.cursor.CircleCursor;
 import stamp.Listenrs.SavingImageListener;
-import stamp.Listenrs.SquareCursor;
+import stamp.Listenrs.cursor.SquareCursor;
 import stamp.Service.AppCloseService;
 import stamp.Service.FileChooserService;
 import stamp.controlers.CursorControler;
 
 
-import java.beans.EventHandler;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.EventListener;
 
 
 public class Controller {
@@ -70,7 +64,7 @@ public class Controller {
     public void initialize(){
         sizeSlider.setMin(1);
         CursorControler cursorControler = new CursorControler(this.picView);
-
+        cursorControler.addEventListener();
 
 
         sizeSlider.valueProperty().addListener((observable,oldValue,newValue)-> {
@@ -86,6 +80,7 @@ public class Controller {
 
             try {
                 savingImageListener.addImageView(selectedImage.getValue());
+
             } catch (FileNotFoundException e1) {
                 e1.printStackTrace();
             }
@@ -96,13 +91,18 @@ public class Controller {
         circleButton.setOnAction( e -> {
             isCircle = true;
             selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
-            cursorControler.addEventListener(selectedCursor.getValue());
+            cursorControler.setImageCursor(selectedCursor.getValue());
+            cursorControler.setCircle(isCircle);
+            cursorControler.setRadius(sizeSlider.getValue());
+
         });
 
         squareButton.setOnAction( e ->{
             isCircle = false;
             selectedCursor = new SimpleObjectProperty<>(squareCursor.generateCursorShape(sizeSlider.getValue()));
-            cursorControler.addEventListener(selectedCursor.getValue());
+            cursorControler.setImageCursor(selectedCursor.getValue());
+            cursorControler.setCircle(isCircle);
+            cursorControler.setRadius(sizeSlider.getValue());
         });
 
 
@@ -116,13 +116,18 @@ public class Controller {
 
 
     public void CursorSizeUpdate(CursorControler cursorControler){
-        if( isCircle){
+        if(isCircle){
 
             selectedCursor = new SimpleObjectProperty<>(circleCursor.generateCursorShape(sizeSlider.getValue()));
-            cursorControler.addEventListener(selectedCursor.getValue());
+            cursorControler.setImageCursor(selectedCursor.getValue());
+            cursorControler.setCircle(isCircle);
+            cursorControler.setRadius(sizeSlider.getValue());
+
         }else {
             selectedCursor = new SimpleObjectProperty<>(squareCursor.generateCursorShape(sizeSlider.getValue()));
-            cursorControler.addEventListener(selectedCursor.getValue());
+            cursorControler.setImageCursor(selectedCursor.getValue());
+            cursorControler.setCircle(isCircle);
+            cursorControler.setRadius(sizeSlider.getValue());
         }
     }
 

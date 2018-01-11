@@ -1,4 +1,4 @@
-package stamp.Listenrs;
+package stamp.Listenrs.cursor;
 
 import javafx.scene.ImageCursor;
 import javafx.scene.SnapshotParameters;
