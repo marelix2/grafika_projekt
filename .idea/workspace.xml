@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stamp/Listenrs/CopyingImageListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stamp/Service/imageConverterService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stamp/controlers/MarkerController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/Controller.java" afterPath="$PROJECT_DIR$/src/stamp/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stamp/controlers/CursorControler.java" afterPath="$PROJECT_DIR$/src/stamp/controlers/CursorControler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/stamp/Listenrs/CircleCursor.java" afterPath="$PROJECT_DIR$/src/stamp/Listenrs/cursor/CircleCursor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/stamp/Listenrs/CursorStategy.java" afterPath="$PROJECT_DIR$/src/stamp/Listenrs/cursor/CursorStategy.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/stamp/Listenrs/SquareCursor.java" afterPath="$PROJECT_DIR$/src/stamp/Listenrs/cursor/SquareCursor.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -907,7 +899,7 @@
       <workItem from="1515331359674" duration="2459000" />
       <workItem from="1515539353921" duration="8470000" />
       <workItem from="1515553793463" duration="6027000" />
-      <workItem from="1515601814077" duration="2097000" />
+      <workItem from="1515601814077" duration="2110000" />
     </task>
     <task id="LOCAL-00001" summary="displaying image on window">
       <created>1515251789083</created>
@@ -972,11 +964,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515345621558</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sth changed">
+      <created>1515690147767</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1515690147767</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52375000" />
+    <option name="totallyTimeSpent" value="52388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
