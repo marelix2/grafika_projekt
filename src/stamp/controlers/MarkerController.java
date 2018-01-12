@@ -80,8 +80,9 @@ public class MarkerController {
 
         radius *=2;
 
-        for(int tmpX = 0; tmpX <= (int)radius; tmpX++) {
-            for (int tmpY = 0 ; tmpY <= (int)(radius); tmpY++) {
+
+        for(int tmpX = x; tmpX <= (int)(x + radius); tmpX++) {
+            for (int tmpY = y ; tmpY <= (int)(y + radius); tmpY++) {
 
                     try {
                         pixels.add(pixelReader.getArgb(tmpX,tmpY));
