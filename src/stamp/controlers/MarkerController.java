@@ -95,17 +95,30 @@ public class MarkerController {
 
     }
 
-    public void putImage(double x, double y, double radius, ArrayList<Integer> pixelss){
+    public void putImage(double x, double y, double radius, ArrayList<Integer> pixelss, boolean isCircle){
+
+        if(isCircle) {
+            this.circleMarker( x , y, radius, pixelss);
+        }
+        else{
+            this.squareMarker( x , y, radius,pixelss);
+        }
+
+
+    }
+
+
+    public void circleMarker (double x, double y, double radius, ArrayList<Integer> pixelss){
+
         imageConverterService imageConverterService = new imageConverterService();
         WritableImage dest = imageConverterService.convertToWritable(this.imageView.getImage());
         PixelWriter writer = dest.getPixelWriter();
 
-        //System.out.println(pixelss.toString());
 
         int width =  (int) this.imageView.getImage().getWidth();
         int height = (int) this.imageView.getImage().getHeight();
 
-       int listIndex = 0;
+        int listIndex = 0;
         for(int tmpX = (int)(x - radius); tmpX <= (int)(x + radius); tmpX++) {
             for (int tmpY = (int)(y - radius); tmpY <= (int)(y + radius); tmpY++) {
                 double squaredDx = Math.pow((tmpX - x), 2);
@@ -117,8 +130,7 @@ public class MarkerController {
                     if (isPixelInImage) {
                         try {
 
-
-                                writer.setArgb(tmpX, tmpY, pixelss.get(listIndex));
+                            writer.setArgb(tmpX  + (int) radius , tmpY  + (int) radius, pixelss.get(listIndex));
 
                         } catch (NullPointerException e) {
                             continue;
@@ -131,9 +143,43 @@ public class MarkerController {
 
 
         this.imageView.setImage(dest);
+
+    }
+
+    public void squareMarker (double x, double y, double radius, ArrayList<Integer> pixelss){
+        imageConverterService imageConverterService = new imageConverterService();
+        WritableImage dest = imageConverterService.convertToWritable(this.imageView.getImage());
+        PixelWriter writer = dest.getPixelWriter();
+
+
+        int width =  (int) this.imageView.getImage().getWidth();
+        int height = (int) this.imageView.getImage().getHeight();
+
+        int listIndex = 0;
+        for(int tmpX = (int)(x - radius); tmpX <= (int)(x + radius); tmpX++) {
+            for (int tmpY = (int)(y - radius); tmpY <= (int)(y + radius); tmpY++) {
+
+                    boolean isPixelInImage = tmpX >= 0  && tmpX < width && tmpY >= 0 && tmpY < height;
+                    //System.out.println(isPixelInImage + " width: " + width + "height: "+ height);
+                    if (isPixelInImage) {
+                        try {
+
+                            writer.setArgb(tmpX  + (int) radius , tmpY  + (int) radius, pixelss.get(listIndex));
+
+                        } catch (NullPointerException e) {
+                            continue;
+                        }
+                    }
+                    listIndex++;
+                }
+            }
+        this.imageView.setImage(dest);
+        }
+
+
+
+
     }
 
 
 
-
-}

@@ -80,6 +80,7 @@ public class CursorControler {
 
            if (event.isShiftDown()) {
 
+
                markerController.CopyPixels((int) event.getX(), (int) event.getY(), radius, isCircle );
                pixels = markerController.getPixels();
 
@@ -87,7 +88,7 @@ public class CursorControler {
 
 
                if(!pixels.isEmpty())
-                   markerController.putImage(event.getX(),event.getY(), radius,pixels);
+                   markerController.putImage(event.getX(),event.getY(), radius,pixels, isCircle);
                     System.out.println("X : "+ event.getX() + " Y: "+event.getY() );
 
 
