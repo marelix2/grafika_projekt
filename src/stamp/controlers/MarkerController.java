@@ -63,7 +63,7 @@ public class MarkerController {
 
                     if (rootDistance <= radius) {
                         try {
-                            pixels.add(pixelReader.getArgb(tmpX, tmpY));
+                            pixels.add(pixelReader.getArgb(tmpX + (int) radius, tmpY + (int) radius));
 
                         } catch (IndexOutOfBoundsException e) {
                             pixels.add(null);
@@ -85,7 +85,7 @@ public class MarkerController {
             for (int tmpY = y ; tmpY <= (int)(y + radius); tmpY++) {
 
                     try {
-                        pixels.add(pixelReader.getArgb(tmpX,tmpY));
+                        pixels.add(pixelReader.getArgb(tmpX + (int) radius, tmpY + (int) radius));
                     } catch (IndexOutOfBoundsException e) {
                         pixels.add(null);
                     }
