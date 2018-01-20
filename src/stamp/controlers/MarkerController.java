@@ -78,14 +78,14 @@ public class MarkerController {
 
     public void SquareShape( int x, int y, double radius){
 
-        radius *=2;
+        int heightOfSquare =(int) radius * 2;
 
 
-        for(int tmpX = x; tmpX <= (int)(x + radius); tmpX++) {
-            for (int tmpY = y ; tmpY <= (int)(y + radius); tmpY++) {
+        for(int tmpX = x; tmpX <= (int)(x + heightOfSquare); tmpX++) {
+            for (int tmpY = y ; tmpY <= (int)(y + heightOfSquare); tmpY++) {
 
                     try {
-                        pixels.add(pixelReader.getArgb(tmpX + (int) radius, tmpY + (int) radius));
+                        pixels.add(pixelReader.getArgb(tmpX, tmpY));
                     } catch (IndexOutOfBoundsException e) {
                         pixels.add(null);
                     }
@@ -126,18 +126,15 @@ public class MarkerController {
                 double squaredDy = Math.pow((tmpY - y), 2);
                 double rootDistance = Math.sqrt(squaredDx + squaredDy);
                 if (rootDistance <= radius) {
-                    boolean isPixelInImage = tmpX >= 0  && tmpX < width && tmpY >= 0 && tmpY < height;
-                    //System.out.println(isPixelInImage + " width: " + width + "height: "+ height);
-                    if (isPixelInImage) {
+
                         try {
 
-                            writer.setArgb(tmpX  + (int) radius , tmpY  + (int) radius, pixelss.get(listIndex));
+                            writer.setArgb(tmpX + (int) radius , tmpY + (int) radius , pixelss.get(listIndex));
 
                         } catch (NullPointerException e) {
                             continue;
                         }
-                    }
-                    listIndex++;
+                   listIndex++;
                 }
             }
         }
@@ -160,9 +157,7 @@ public class MarkerController {
         for(int tmpX = (int)(x - radius); tmpX <= (int)(x + radius); tmpX++) {
             for (int tmpY = (int)(y - radius); tmpY <= (int)(y + radius); tmpY++) {
 
-                    boolean isPixelInImage = tmpX >= 0  && tmpX < width && tmpY >= 0 && tmpY < height;
-                    //System.out.println(isPixelInImage + " width: " + width + "height: "+ height);
-                    if (isPixelInImage) {
+
                         try {
 
                             writer.setArgb(tmpX  + (int) radius , tmpY  + (int) radius, pixelss.get(listIndex));
@@ -170,7 +165,7 @@ public class MarkerController {
                         } catch (NullPointerException e) {
                             continue;
                         }
-                    }
+
                     listIndex++;
                 }
             }

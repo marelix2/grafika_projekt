@@ -63,6 +63,13 @@ public class CursorControler {
 
            }
 
+           if(event.getX() + (int) radius >= imageView.getImage().getWidth()){
+               this.imageView.getScene().setCursor(Cursor.DEFAULT);
+           }
+           if(event.getY() + (int) radius  >= imageView.getImage().getHeight()){
+               this.imageView.getScene().setCursor(Cursor.DEFAULT);
+           }
+
        });
 
        this.imageView.addEventHandler(MouseEvent.MOUSE_EXITED, event -> {
