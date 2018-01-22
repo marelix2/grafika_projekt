@@ -12,13 +12,17 @@ import javafx.scene.image.ImageView;
 import stamp.Listenrs.cursor.CircleCursor;
 import stamp.Listenrs.SavingImageListener;
 import stamp.Listenrs.cursor.SquareCursor;
+import stamp.Service.informations.AboutInfoService;
 import stamp.Service.AppCloseService;
 import stamp.Service.FileChooserService;
+import stamp.Service.informations.ExitAlertService;
+import stamp.Service.informations.InstructionService;
 import stamp.controlers.CursorControler;
 
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 public class Controller {
@@ -42,10 +46,19 @@ public class Controller {
     private MenuItem fileClose;
 
     @FXML
+    private MenuItem fileSaveAs;
+
+    @FXML
+    private MenuItem about;
+
+    @FXML
     private Button circleButton;
 
     @FXML
     private Button squareButton;
+
+    @FXML
+    private MenuItem instruction;
 
     private ObservableValue<File> selectedImage = new SimpleObjectProperty<>();
 
@@ -87,6 +100,17 @@ public class Controller {
 
         });
 
+        fileSaveAs.setOnAction(e->{
+            try {
+                FileChooserService.saveToFile(picView.getImage());
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
+
+        about.setOnAction(e-> AboutInfoService.showAbout());
+
+        instruction.setOnAction(e-> InstructionService.showInstruction());
 
         circleButton.setOnAction( e -> {
             isCircle = true;
@@ -106,7 +130,13 @@ public class Controller {
         });
 
 
-        fileClose.setOnAction(e -> AppCloseService.closeApp());
+        fileClose.setOnAction(e -> {
+            try {
+                ExitAlertService.showExitAlert(picView);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
 
     }
 
