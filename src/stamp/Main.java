@@ -9,6 +9,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
+/**
+ * Created by Jarek
+ */
+
 public class Main extends Application {
 
     @Override

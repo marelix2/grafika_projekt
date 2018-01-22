@@ -2,6 +2,10 @@ package stamp.Service.informations;
 
 import javafx.scene.control.Alert;
 
+/**
+ * Created by Jarek
+ */
+
 public class InstructionService {
     public static void showInstruction() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

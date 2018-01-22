@@ -12,6 +12,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Created by Jarek
+ */
+
 public class FileChooserService {
     public static Optional<File> selectFile() {
         FileChooser fileChooser = new FileChooser();
@@ -29,9 +33,7 @@ public class FileChooserService {
         System.out.println(file);
         BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image, null);
         System.out.println(bufferedImage);
-
             ImageIO.write(bufferedImage, "PNG", file);
-
         System.out.println(file);
 
     }

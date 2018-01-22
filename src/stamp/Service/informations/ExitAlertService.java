@@ -10,6 +10,10 @@ import stamp.Service.FileChooserService;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Created by Jarek
+ */
+
 public class ExitAlertService {
     public static void showExitAlert(ImageView picView) throws IOException{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
